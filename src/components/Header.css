@@ -1,0 +1,27 @@
+.Header {
+  max-width: 1128px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 64px 16px 30px;
+  border-bottom: 2px solid #EFF2F7;
+  width: 100%;
+}
+
+.logo {
+  width: 186px;
+  height: 32px;
+}
+
+.header__btn {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  background: #091E42;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  padding: 12px 16px;
+  text-transform: uppercase;
+}

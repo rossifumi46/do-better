@@ -1,0 +1,19 @@
+.Info {
+  margin-left: 64px;
+  max-width: 436px;
+}
+
+.info__title {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  color: #091E42;
+}
+
+.info__cards {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 186px 186px;
+  row-gap: 36px;
+  column-gap: 64px;
+}

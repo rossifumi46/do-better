@@ -1,0 +1,19 @@
+.Form {
+  width: 50%;
+}
+
+.nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.next {
+  margin-left: 10px;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  background: #091E42;
+  padding: 5px 10px;
+}
