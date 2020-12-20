@@ -1,8 +1,3 @@
-.StepItems {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .step-items__card {
   margin-top: 15px;
   margin-left: 12px;

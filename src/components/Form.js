@@ -5,11 +5,13 @@ import { useState } from 'react';
 import StepItems from './steps/StepItems';
 
 function Form(props) {
+  const [isEnd, setIsEnd] = useState(false);
   const [isFirst, setIsFirst] = useState(false);
   const [isSecond, setIsSecond] = useState(false);
   const [first, setFirst] = useState();
   const [clickedId, setId] = useState(null);
   const [secondId, setSecondId] = useState(null);
+  const [thirdId, setThirdId] = useState(null);
 
   function handleFirst(id) {
     setIsFirst(!isFirst);
@@ -20,6 +22,15 @@ function Form(props) {
   function handleSecond(id) {
     setIsSecond(!isSecond);
     setSecondId(id);
+  }
+
+  function handleThird(id) {
+    setIsEnd(!isEnd);
+    setThirdId(id);
+  }
+
+  function handleSubmit() {
+    props.onFinish();
   }
 
   return (
@@ -44,12 +55,10 @@ function Form(props) {
       {isSecond &&
         <StepItems
           items={transport}
+          onClick={handleThird}
         />
       }
-      {/* <div className="nav">
-        <button className="next" onClick={handleClick}>Назад</button>
-        <button className="next" onClick={handleClick}>Далее</button>
-      </div> */}
+      { isEnd && <button onClick={handleSubmit}>Продолжить</button>}
     </div> 
   )
 }
