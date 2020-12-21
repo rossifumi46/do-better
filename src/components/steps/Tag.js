@@ -10,7 +10,7 @@ function Tag(props) {
   }
 
   return (
-    <div className="step-items__card" onClick={isClicked ? () => {} : handleClick} style={{backgroundColor: isClicked ? '#2FAEFF' : '#FFF'}}>
+    <div className="step-items__card" onClick={isClicked ? () => {} : handleClick} style={{backgroundColor: isClicked ? '#EFF2F7' : '#FFF'}}>
       <p className="step-items__title">{props.item.title}</p>
       { isClicked && <button onClick={handleClick} className="card__change">Изменить</button>}
     </div>

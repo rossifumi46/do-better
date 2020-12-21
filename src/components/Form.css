@@ -17,3 +17,15 @@
   background: #091E42;
   padding: 5px 10px;
 }
+
+.form__submit {
+  margin-left: 24px;
+  height: 56px;
+  margin-top: 36px;
+  background: linear-gradient(90deg, #2659F3 0%, #6827F0 100%);
+  box-shadow: 0px 6px 24px rgba(38, 89, 243, 0.32);
+  border-radius: 6px;
+  padding: 19px 100px;
+  border: none;
+  color: #FFF;
+}

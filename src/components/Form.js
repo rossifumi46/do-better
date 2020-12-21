@@ -3,6 +3,7 @@ import { step, transport } from '../utils/data';
 import Step from './steps/Step';
 import { useState } from 'react';
 import StepItems from './steps/StepItems';
+import Address from './Address';
 
 function Form(props) {
   const [isEnd, setIsEnd] = useState(false);
@@ -56,9 +57,16 @@ function Form(props) {
         <StepItems
           items={transport}
           onClick={handleThird}
+          less={isEnd}
+          id={thirdId}
         />
       }
-      { isEnd && <button onClick={handleSubmit}>Продолжить</button>}
+      { isEnd && (
+        <>
+        <Address/>
+        <button className="form__submit" onClick={handleSubmit}>Продолжить</button>
+        </>
+      )}
     </div> 
   )
 }
