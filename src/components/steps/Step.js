@@ -1,9 +1,7 @@
 import Card from '../Card';
 
 function Step(props) {
-
-  const isDepend = props.chose;
-  const arr = isDepend ? props.data[props.chose]: props.data;
+  const arr = props.data;
   function render (isLess) {
     return arr.map(item => {
       return (
@@ -15,7 +13,7 @@ function Step(props) {
       )
     })
   } 
-  
+
   return (
     
     <div className="Step">

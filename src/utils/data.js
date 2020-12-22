@@ -34,19 +34,15 @@ const step = {
     2: [
       {
         id: 1,
-        title: 'Архитектура',
+        title: 'Построить',
       },
       {
         id: 2,
-        title: 'Озеленение',
+        title: 'Поченить',
       },
       {
         id: 3,
-        title: 'Освещение',
-      },
-      {
-        id: 4,
-        title: 'Дорогостроительство',
+        title: 'Снести',
       }
     ],
     3: [
@@ -100,4 +96,62 @@ const transport = [
   },
 ]
 
-export { step, info, transport };
+const cityCats = [
+  {
+    id: 1,
+    'title': 'Архитектура',
+  },
+  {
+    id: 2,
+    'title': 'Озеленение',
+  },
+  {
+    id: 3,
+    'title': 'Освещение',
+  },
+  {
+    id: 4,
+    'title': 'Дороги  ',
+  },
+]
+
+const buildings = {
+  1: [
+    {
+      id: 1,
+      title: 'Дом',
+    },
+    {
+      id: 2,
+      title: 'Церковь',
+    },
+    {
+      id: 3,
+      title: 'Музей',
+    },
+    {
+      id: 4,
+      title: 'Памятник',
+    },
+  ],
+  2: [
+    {
+      id: 1,
+      title: 'Парк',
+    },
+    {
+      id: 2,
+      title: 'Фонтан',
+    },
+    {
+      id: 3,
+      title: 'Детские площадки',
+    },
+    {
+      id: 4,
+      title: 'Площатка для выгула собак',
+    },
+  ],
+} 
+
+export { step, info, transport, cityCats, buildings }
