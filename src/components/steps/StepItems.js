@@ -16,6 +16,7 @@ function StepItems(props) {
 
   return (
     <div className="StepItems">
+      <div className="check" style={{opacity: props.less ? 1 : 0}}></div>
       {render(props.less)}
     </div>
   )

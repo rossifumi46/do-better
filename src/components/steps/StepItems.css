@@ -2,3 +2,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.check {
+  content: url(../../images/check.svg);
+  margin-right: 18px;
+}

@@ -17,31 +17,31 @@ function Form(props) {
   const [oneTwoId, setOneTwoId] = useState(null);
 
   function handleFirst(id) {
+    setId(isFirst ? null : id);
     setIsFirst(id === 2 ? false : !isFirst);
     setFirst(id);
-    setId(id);
     setIsOneTwo(id === 2 ? !isOneTwo : false);
   }
 
   function handleOneTwo(id) {
+    setOneTwoId(isFirst ? null : id);
     setIsFirst(!isFirst);
-    setOneTwoId(id);
   }
 
   function handleSecond(id) {
     if (handleOneTwo && oneTwoId > 2) {
+      setSecondId(isSecond ? null : id);
       setIsEnd(!isEnd);
       setIsSecond(!isSecond);
-      setSecondId(id);
     } else {
+      setSecondId(isSecond ? null : id);
       setIsSecond(!isSecond);
-      setSecondId(id);
     }
   }
 
   function handleThird(id) {
+    setThirdId(isEnd ? null : id);
     setIsEnd(!isEnd);
-    setThirdId(id);
   }
 
   function handleSubmit() {
