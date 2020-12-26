@@ -12,7 +12,10 @@ const PopupWithForm = (props) => {
           <input type="text" className="input" style={{marginBottom: '16px'}} placeholder="Имя и Фамилия"/>
           <input type="e-mail" className="input" placeholder="e-mail"/>
           <p className="result">{result}</p>
-          <button type="submit" className="form__submit">Отправить</button>  
+          <div className="buttons">
+            <button type="submit" onCLick={props.onSubmit} className="form__submit" style={{background: "#091e42"}}>Отменить</button>  
+            <button type="submit" className="form__submit">Отправить</button>
+          </div>
         </form>
       </div>
     </section>
