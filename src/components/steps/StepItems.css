@@ -1,9 +1,11 @@
 .StepItems {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .check {
-  content: url(../../images/check.svg);
   margin-right: 18px;
+  margin-top: 50px;
+  height: 24px;
 }

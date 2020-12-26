@@ -1,5 +1,6 @@
 .Form {
-  width: 50%;
+  position: relative;
+  height: auto;
 }
 
 .nav {
@@ -19,7 +20,7 @@
 }
 
 .form__submit {
-  margin-left: 24px;
+  margin-left: 60px;
   height: 56px;
   margin-top: 36px;
   background: linear-gradient(90deg, #2659F3 0%, #6827F0 100%);
@@ -28,4 +29,18 @@
   padding: 19px 100px;
   border: none;
   color: #FFF;
+}
+
+.line {
+  margin: 100px 0;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  /* border-image: ; */
+  z-index: -1;
+}
+
+.end {
+  display: flex;
 }

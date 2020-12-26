@@ -9,7 +9,7 @@ function Info(props) {
       <div className="info__cards">
         {info.map(item => {
           return (
-            <InfoCard img={item.img} text={item.text}/>
+            <InfoCard img={item.img} text={item.text} key={item.id}/>
           )
         })}
       </div>

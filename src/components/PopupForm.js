@@ -7,9 +7,12 @@ const PopupWithForm = (props) => {
     <section className='PopupForm'>
       <div className="popup__container">
         <h2 className="popup__form-title">Результат</h2>
-        {result}
-        <form onSubmit={props.onSubmit} className="popup__form" name={`${props.name}Form`} novalidate>
-          <button type="submit" >Отправить</button>  
+        
+        <form onSubmit={props.onSubmit} className="popup__form" name={`${props.name}Form`}>
+          <input type="text" className="input" style={{marginBottom: '16px'}} placeholder="Имя и Фамилия"/>
+          <input type="e-mail" className="input" placeholder="e-mail"/>
+          <p className="result">{result}</p>
+          <button type="submit" className="form__submit">Отправить</button>  
         </form>
       </div>
     </section>
