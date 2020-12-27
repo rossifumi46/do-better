@@ -1,6 +1,5 @@
 .StepItems {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -8,4 +7,10 @@
   margin-right: 18px;
   margin-top: 50px;
   height: 24px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 450px;
 }

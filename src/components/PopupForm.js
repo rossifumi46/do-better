@@ -1,8 +1,14 @@
 import './PopupForm.css';
 
 const PopupWithForm = (props) => {
+  console.log(props.poem)
   function toPoem() {
-    return props.poem.join().split('\n').map(item => {
+    const str = props.poem.reduce( (prev, current) => {
+      console.log(current);
+      return current.poem ? prev + current.poem : prev;
+    }, '')
+    console.log(str);
+    return str.split('\n').map(item => {
       return (
         <>
           {item}<br />

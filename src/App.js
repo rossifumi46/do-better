@@ -7,7 +7,7 @@ import { useState } from 'react';
  
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [poem, setPoem] = useState([]);
+  const [poem, setPoem] = useState([{}, {}, {}, {}]);
   function handleSubmit() {
     setIsOpen(false);
   }
@@ -16,8 +16,10 @@ function App() {
     setIsOpen(true);
   }
 
-  function handlePoemChange(newItem) {
-    setPoem([...poem, newItem]);
+  function handlePoemChange(newItem, id) {
+    const temp = [...poem];
+    temp[id].poem = newItem;
+    setPoem(temp);
   }
 
   return (

@@ -33,7 +33,7 @@ function StepItems(props) {
   return (
     <div className="StepItems">
       <div className="check" style={props.less ? check : style}></div>
-      {render(props.less)}
+      <div className="items">{render(props.less)}</div>
     </div>
   )
 }

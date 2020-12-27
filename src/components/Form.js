@@ -41,7 +41,7 @@ function Form(props) {
     setIsSecond(false);
     setThirdId(null);
     setIsEnd(false);
-    props.onPoemChange(step.first[id-1].poem);
+    props.onPoemChange(step.first[id-1].poem, 0);
   }
 
   function handleOneTwo(id) {
@@ -51,7 +51,7 @@ function Form(props) {
     setIsSecond(false);
     setThirdId(null);
     setIsEnd(false);
-    props.onPoemChange(cityCats[id-1].poem);
+    props.onPoemChange(cityCats[id-1].poem, 1);
   }
 
   function handleSecond(id) {
@@ -65,14 +65,14 @@ function Form(props) {
     }
     setThirdId(null);
     setIsEnd(false);
-    props.onPoemChange(step.second[first][id-1].poem);
+    props.onPoemChange(step.second[first][id-1].poem, 2);
   }
 
   function handleThird(id) {
     const data = isOneTwo ? buildings[oneTwoId] : transport
     setThirdId(isEnd ? null : id);
     setIsEnd(!isEnd);
-    props.onPoemChange(data[id-1].poem);
+    props.onPoemChange(data[id-1].poem, 3);
   }
 
   function handleSubmit() {
@@ -82,7 +82,7 @@ function Form(props) {
   function switcher() {
     switch(clickedId) {
       case 1:
-        return <Route placeholder="Маршрут"/>
+        return <Address title='Добавить остановку по адресу:'/>
       case 2:
         switch(oneTwoId) {
           case 1:
