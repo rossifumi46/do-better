@@ -31,16 +31,6 @@
   color: #FFF;
 }
 
-.line {
-  margin: 100px 0;
-  height: 500px;
-  position: absolute;
-  top: 0;
-  left: 5px;
-  /* border-image: ; */
-  z-index: -1;
-}
-
 .end {
   display: flex;
 }

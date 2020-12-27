@@ -41,6 +41,7 @@ function Form(props) {
     setIsSecond(false);
     setThirdId(null);
     setIsEnd(false);
+    props.onPoemChange(step.first[id-1].poem);
   }
 
   function handleOneTwo(id) {
@@ -50,6 +51,7 @@ function Form(props) {
     setIsSecond(false);
     setThirdId(null);
     setIsEnd(false);
+    props.onPoemChange(cityCats[id-1].poem);
   }
 
   function handleSecond(id) {
@@ -63,23 +65,25 @@ function Form(props) {
     }
     setThirdId(null);
     setIsEnd(false);
+    props.onPoemChange(step.second[first][id-1].poem);
   }
 
   function handleThird(id) {
+    const data = isOneTwo ? buildings[oneTwoId] : transport
     setThirdId(isEnd ? null : id);
     setIsEnd(!isEnd);
+    props.onPoemChange(data[id-1].poem);
   }
 
   function handleSubmit() {
     props.onFinish();
   }
 
-  function switcher(props) {
+  function switcher() {
     switch(clickedId) {
       case 1:
         return <Route placeholder="Маршрут"/>
       case 2:
-        console.log(oneTwoId);
         switch(oneTwoId) {
           case 1:
           case 2:
@@ -139,7 +143,6 @@ function Form(props) {
           <button className="form__submit" onClick={handleSubmit}>Продолжить</button>
         </div>
       }
-      <div className="line"></div>
     </div> 
   )
 }

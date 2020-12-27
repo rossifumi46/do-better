@@ -6,7 +6,7 @@ function Main(props) {
   return (
     <div className="Main">
       {/* <Steps/> */}
-      <Form onFinish={props.onFinish}/>
+      <Form onFinish={props.onFinish} onPoemChange={props.onPoemChange}/>
       <Info/>
     </div>
   )

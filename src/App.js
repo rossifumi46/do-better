@@ -7,7 +7,7 @@ import { useState } from 'react';
  
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [poem, setPoem] = useState([]);
   function handleSubmit() {
     setIsOpen(false);
   }
@@ -16,12 +16,16 @@ function App() {
     setIsOpen(true);
   }
 
+  function handlePoemChange(newItem) {
+    setPoem([...poem, newItem]);
+  }
+
   return (
     <div className="App">
       <Header/>
-      <Main onFinish={handleFinish}/>
+      <Main onFinish={handleFinish} onPoemChange={handlePoemChange}/>
       <Footer/>
-      { isOpen && <PopupForm onSubmit={handleSubmit}/> }
+      { isOpen && <PopupForm onSubmit={handleSubmit} poem={poem}/> }
     </div>
   );
 }
