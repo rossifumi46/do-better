@@ -82,7 +82,7 @@ function Form(props) {
   function switcher() {
     switch(clickedId) {
       case 1:
-        return <Address title='Добавить остановку по адресу:'/>
+        return <Address title='Добавить остановку по адресу:' onAddressSubmit={props.onAddressSubmit}/>
       case 2:
         switch(oneTwoId) {
           case 1:
