@@ -1,0 +1,12 @@
+.Main {
+  display: flex;
+  margin: 80px 220px 0;
+}
+
+.main__title {
+  margin-left: 42px;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  color: #091E42;
+}

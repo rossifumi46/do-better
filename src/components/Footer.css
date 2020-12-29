@@ -1,0 +1,32 @@
+.Footer {
+  margin-top: 96px;
+  background: #EFF2F7;
+  opacity: 0.5;
+  border-radius: 12px;
+  padding: 32px 48px;
+  width: 1096px;
+  margin-bottom: 24px;
+}
+
+.footer__links {
+  display: flex;
+}
+
+.footer__link {
+  margin-left: 40px;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #6B778C;
+}
+
+.footer__link:first-of-type {
+  margin-left: 0;
+}
+
+.footer__text {
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #6B778C;
+}

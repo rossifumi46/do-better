@@ -1,0 +1,36 @@
+.Form {
+  position: relative;
+  height: auto;
+}
+
+.nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.next {
+  margin-left: 10px;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  background: #091E42;
+  padding: 5px 10px;
+}
+
+.form__submit {
+  margin-left: 60px;
+  height: 56px;
+  margin-top: 36px;
+  background: linear-gradient(90deg, #2659F3 0%, #6827F0 100%);
+  box-shadow: 0px 6px 24px rgba(38, 89, 243, 0.32);
+  border-radius: 6px;
+  padding: 19px 100px;
+  border: none;
+  color: #FFF;
+}
+
+.end {
+  display: flex;
+}
