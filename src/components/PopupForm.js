@@ -2,7 +2,6 @@ import './PopupForm.css';
 import { useState } from 'react';
 
 const PopupWithForm = (props) => {
-  console.log(props.address);
   const [isActive, setIsActive] = useState(false);
   const [btnText, setBtnText] = useState('Отправить');
   const [email, setEmail] = useState('');
@@ -13,6 +12,7 @@ const PopupWithForm = (props) => {
       return current.poem ? prev + current.poem : prev;
     }, '');
   }
+  
   function toPoem() {
     return toString().split('\n').map(item => {
       return (
@@ -27,7 +27,7 @@ const PopupWithForm = (props) => {
     event.preventDefault();
     setBtnText('Отправка...');
     
-    fetch('http://165.22.79.111/addresses', {
+    fetch('https://immense-sea-80366.herokuapp.com/addresses', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const PopupWithForm = (props) => {
     })
       .then(response => response.json())
       .then(data => {
-        fetch('http://165.22.79.111/poems', {
+        fetch('https://immense-sea-80366.herokuapp.com/poems', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const PopupWithForm = (props) => {
           <input type="e-mail" value={email} className="input" placeholder="e-mail" onChange={handleEmailChange}/>
           <p className="result" style={{textAlign: 'center'}}>{toPoem()}</p>
           <div className="buttons">
-            <button onClick={props.onSubmit} className="form__submit" style={{background: "#091e42"}}>Отменить</button>  
+            <button onClick={props.onCancel} className="form__submit" style={{background: "#091e42"}}>Отменить</button>  
             <button type="submit" onClick={handleSubmit} className="form__submit">{btnText}</button>
           </div>
         </form>

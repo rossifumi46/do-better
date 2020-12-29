@@ -3,8 +3,6 @@ import image from '../../images/check.svg';
 import './Step.css';
 
 function Step(props) {
-  const arr = props.data;
-
   const style = {
     backgroundColor: '#F7C580',
     borderRadius: '50%',
@@ -19,7 +17,7 @@ function Step(props) {
   }
 
   function render (isLess) {
-    return arr.map(item => {
+    return props.data.map(item => {
       return (
         (item.id === props.id || !isLess) && <Card
           item={item}

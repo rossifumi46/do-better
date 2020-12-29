@@ -1,7 +1,6 @@
 import './Form.css';
 import { step, transport, cityCats, buildings } from '../utils/data';
 import Step from './steps/Step';
-import { useState } from 'react';
 import StepItems from './steps/StepItems';
 import Address from './Address';
 import image from '../images/check.svg';
@@ -21,70 +20,18 @@ function Form(props) {
     marginTop: '38px'
   }
 
-  const [isEnd, setIsEnd] = useState(false);
-  const [isFirst, setIsFirst] = useState(false);
-  const [isSecond, setIsSecond] = useState(false);
-  const [first, setFirst] = useState();
-  const [clickedId, setId] = useState(null);
-  const [secondId, setSecondId] = useState(null);
-  const [thirdId, setThirdId] = useState(null);
-  const [isOneTwo, setIsOneTwo] = useState(false);
-  const [oneTwoId, setOneTwoId] = useState(null);
-
-  function handleFirst(id) {
-    setId(isFirst ? null : id);
-    setIsFirst(id === 2 ? false : !isFirst);
-    setFirst(id);
-    setIsOneTwo(id === 2 ? !isOneTwo : false);
-    setOneTwoId(null);
-    setSecondId(null);
-    setIsSecond(false);
-    setThirdId(null);
-    setIsEnd(false);
-    props.onPoemChange(step.first[id-1].poem, 0);
-  }
-
-  function handleOneTwo(id) {
-    setOneTwoId(isFirst ? null : id);
-    setIsFirst(!isFirst);
-    setSecondId(null);
-    setIsSecond(false);
-    setThirdId(null);
-    setIsEnd(false);
-    props.onPoemChange(cityCats[id-1].poem, 1);
-  }
-
-  function handleSecond(id) {
-    if (handleOneTwo && oneTwoId > 2) {
-      setSecondId(isSecond ? null : id);
-      setIsEnd(!isEnd);
-      setIsSecond(!isSecond);
-    } else {
-      setSecondId(isSecond ? null : id);
-      setIsSecond(!isSecond);
-    }
-    setThirdId(null);
-    setIsEnd(false);
-    props.onPoemChange(step.second[first][id-1].poem, 2);
-  }
-
-  function handleThird(id) {
-    const data = isOneTwo ? buildings[oneTwoId] : transport
-    setThirdId(isEnd ? null : id);
-    setIsEnd(!isEnd);
-    props.onPoemChange(data[id-1].poem, 3);
-  }
-
   function handleSubmit() {
+    if (!oneTwo.isOneTwo) props.onPoemChange(null, 1);
+    if (!third.isEnd) props.onPoemChange(null, 3);
     props.onFinish();
   }
 
   function switcher() {
-    switch(clickedId) {
+    switch(first.firstId) {
       case 1:
         return <Address title='Добавить остановку по адресу:' onAddressSubmit={props.onAddressSubmit}/>
       case 2:
-        switch(oneTwoId) {
+        switch(oneTwo.oneTwoId) {
           case 1:
           case 2:
           case 3:
@@ -101,40 +48,42 @@ function Form(props) {
     }
   }
 
+  const {first, oneTwo, second, third} = props.state;
+
   return (
     <div className="Form">
       <h2 className="main__title">Укажите нам вашу проблему</h2>
       <Step
         data={step.first}
-        onClick={handleFirst}
-        id={clickedId}
-        less={isFirst || isOneTwo}
+        onClick={props.onFirst}
+        id={first.firstId}
+        less={first.isFirst || oneTwo.isOneTwo}
       />
-      {isOneTwo &&
+      {oneTwo.isOneTwo &&
         <Step
           data={cityCats}
-          onClick={handleOneTwo}
-          id={oneTwoId}
-          less={isFirst}
+          onClick={props.onOneTwo}
+          id={oneTwo.oneTwoId}
+          less={first.isFirst}
         />
       }
-      {isFirst && 
+      {first.isFirst && 
         <Step
-          data={step.second[first]}
-          onClick={handleSecond}
-          id={secondId}
-          less={isSecond}
+          data={step.second[first.firstId]}
+          onClick={props.onSecond}
+          id={second.secondId}
+          less={second.isSecond}
         />
       }
-      {isSecond && oneTwoId < 3 && clickedId !== 3 &&
+      {second.isSecond && oneTwo.oneTwoId < 3 && first.firstId !== 3 &&
         <StepItems
-          items={isOneTwo ? buildings[oneTwoId] : transport}
-          onClick={handleThird}
-          less={isEnd}
-          id={thirdId}
+          data={oneTwo.isOneTwo ? buildings[oneTwo.oneTwoId] : transport}
+          onClick={props.onThird}
+          id={third.thirdId}
+          less={third.isEnd}
         />
       }
-      { ((isEnd || (clickedId === 2 && oneTwoId > 2 && secondId)) || (clickedId === 3 && secondId)) &&
+      { ((third.isEnd || (first.firstId === 2 && oneTwo.oneTwoId > 2 && second.secondId)) || (first.firstId === 3 && second.secondId)) &&
         <div className="">
           <div className="end">
             <div className="check" style={props.less ? check : style}></div>

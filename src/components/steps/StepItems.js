@@ -19,7 +19,7 @@ function StepItems(props) {
   }
 
   function render (isLess) {
-    return props.items.map(item => {
+    return props.data.map(item => {
       return (
         (item.id === props.id || !isLess) && <Tag
         item={item}

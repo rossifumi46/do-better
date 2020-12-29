@@ -5,8 +5,16 @@ import Info from './Info';
 function Main(props) {
   return (
     <div className="Main">
-      {/* <Steps/> */}
-      <Form onFinish={props.onFinish} onPoemChange={props.onPoemChange} onAddressSubmit={props.onAddressSubmit}/>
+      <Form 
+        onFinish={props.onFinish}
+        onPoemChange={props.onPoemChange}
+        onAddressSubmit={props.onAddressSubmit}
+        onFirst={props.onFirst}
+        onOneTwo={props.onOneTwo}
+        onSecond={props.onSecond}
+        onThird={props.onThird} 
+        state={props.state}
+      />
       <Info/>
     </div>
   )
